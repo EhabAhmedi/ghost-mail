@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-
+import 'firebase//firestore';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -19,6 +19,8 @@ const firebaseConfig = {
   appId: "1:603740121147:web:5c87b5d3e2529a06e7141e",
   measurementId: "G-E95D3DF7EN"
 };
+
+
 
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);

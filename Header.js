@@ -9,6 +9,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import { logout, selectUser } from "./features/counter/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "./firebase";
+import ghost  from "./assets/ghost.png"
 
 
 function Header() {
@@ -28,7 +29,7 @@ function Header() {
           <MenuIcon />
         </IconButton>
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Gmail2020.logo.png"
+          src={ghost}
           alt=""
         />
       </div>
