@@ -14,3 +14,10 @@ height: 100vh;
   object-fit: contain;
   height: 200px;
 }
+
+#dark .login{
+  background-color: black;
+}
+#dark .login__container>img{
+  filter: invert(1);
+}

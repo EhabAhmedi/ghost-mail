@@ -1,14 +1,17 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import {  login, logout } from "./features/counter/userSlice";
 import { auth, provider } from "./firebase";
 import "./login.css";
 import { useDispatch } from "react-redux";
+import ghost  from "./assets/ghost.png"
+import { ThemeContext } from "./App";
 
 
 
 function Login() {
 const dispatch = useDispatch();
+
 
   const signIn = () => {
     auth.signInWithPopup(provider).then(({ user }) => {
@@ -23,11 +26,12 @@ const dispatch = useDispatch();
     .catch(error=> alert(error.message));
     
   };
+  const {theme} = useContext(ThemeContext)
   return (
-    <div className="login">
+    <div className="login" id={theme}>
       <div className="login__container">
         <img
-          src="https://static.dezeen.com/uploads/2020/10/gmail-google-logo-rebrand-workspace-design_dezeen_2364_col_0.jpg"
+          src={ghost}
           alt=""
         />
         <Button variant="contained" color="primary" onClick={signIn}>

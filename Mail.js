@@ -1,7 +1,6 @@
 import { IconButton } from "@mui/material";
-import React from "react";
+import React, { createContext, useContext } from "react";
 import { Link, useHistory, useNavigate } from "react-router-dom";
-import "./Mail.css";
 import LableImportantIcon from "@mui/icons-material/LabelImportant";
 import MoveToInboxIcon from "@mui/icons-material/MoveToInbox";
 import ErrorIcon from "@mui/icons-material/Error";
@@ -18,6 +17,7 @@ import PrintIcon from "@mui/icons-material/Print";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { selectOpenMail } from "./features/counter/mailSlice";
 import { useSelector } from "react-redux";
+import {ThemeContext} from "./App.js"
 
 
 function Mail() {
@@ -25,8 +25,10 @@ function Mail() {
   const navigate = useNavigate();
 
   const selectedMail = useSelector(selectOpenMail);
+  const {theme} = useContext(ThemeContext)
   return (
-    <div className='mail'>
+    
+    <div  className='mail' id={theme}>
       <div className="mail__tools">
         <div className="mail__toolsLeft">
           <IconButton onClick={()=> navigate('/')}>
@@ -101,6 +103,7 @@ function Mail() {
         </div>
       </div>
     </div>
+    
   )
 }
 

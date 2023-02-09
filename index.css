@@ -37,6 +37,30 @@ code {
   NAV BAR 
 */
 
+#dark .logoBtn__wrapper > p{
+  color: whitesmoke;
+}
+.logoBtn__wrapper > p{
+color: #242424;
+}
+.dark__logobtn{
+height: 38px;
+
+}
+.logoBtn__wrapper > p{
+  font-size: 12px;
+}
+#dark .dark__logobtn{
+  filter: invert(1);
+}
+.logoBtn__wrapper{
+  display: flex;
+  flex-direction: column;
+align-items: center;
+justify-content: center;
+top: 10px;
+  
+}
 .header{
 
   display: flex;
@@ -45,12 +69,22 @@ code {
   border-bottom: 1px solid whitesmoke;
 }
 
+#dark.header{
+  background-color: #242424;
+  border-bottom: none;
+}
+
+
 .header__left{
 
   display: flex;
   align-items: center;
   padding: 12px;
   gap: 1rem;
+}
+
+#dark .dark__logo{
+  filter: invert(1) ;  
 }
 
 
@@ -71,11 +105,25 @@ code {
   border-radius: 5px;
 }
 
+#dark .MuiSvgIcon-root{
+  color: whitesmoke;
+}
 .header__middle > .MuiSvgIcon-root{
 
   color: grey;
 }
+#dark .header__middle{
+  
+  background-color: #242424;
+}
 
+#dark .header__middle > input{
+  background-color: #3a3b3c;
+  
+  
+  border-radius: 10px;
+  color: whitesmoke;
+}
 .header__middle > input{
 
   
@@ -89,11 +137,39 @@ code {
 }
 
 .header__right{
-
+padding-top: 0 !important;
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 12px;
+}
+.header__avatar {
+  cursor: pointer;
+} 
+.avatar__wrapper{
+  padding-top: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#dark .avatar__wrapper > p{
+  color: whitesmoke;
+}
+.avatar__wrapper > p{
+  /* position: absolute; */
+    right: 0;
+    top: 30px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+.avatar__wrapper:hover> p{
+  transform: translateY(40%);
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+
 }
 
 /*  
@@ -104,14 +180,19 @@ SIDE BAR
 
   margin: 15px 0 15px 10px !important;
   text-transform: capitalize !important;
-  color: gray;
+  color: black !important;
   padding: 15px !important;
   border-radius: 30px !important;
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.75);
 
 }
 
-
+#dark .sidebar__compose{
+  background-color: whitesmoke;
+}
+#dark .compose__icon{
+  color: black;
+}
 
 /*  
 SIDE BAR OPTION 
@@ -122,9 +203,17 @@ SIDE BAR OPTION
   flex: 0.3;
   max-width: 300px;
   padding-right: 20px;
+  
 
 }
+
+
+#dark .sidebarOption{
+  color: #f2f2f2;
+  
+}
 .sidebarOption{
+  transition: all 50ms ease !important;
 
   display: flex;
   align-items: center;
@@ -136,20 +225,43 @@ SIDE BAR OPTION
   color: #818181;
 }
 .sidebarOption > .MuiSvgIcon-root {
-
   padding: 5px;
 }
-
+#dark .sidebarOption:hover > .MuiSvgIcon-root{
+  color: black;
+}
 .sidebarOption:hover,
 .sidebarOption:hover > p, 
 .sidebarOption:hover > h3,
 .sidebarOption--active ,
 .sidebarOption--active > p,
 .sidebarOption--active > h3{
+  transition: none !important;
 
   background-color: #fcecec;
   color: #c04b37;
   font-weight: 800 !important;
+}
+#dark .sidebarOption:hover{
+  transform: scale(95%);
+  border-radius: 40px;
+  
+
+}
+#dark .selcted__icon:hover{
+  color: #242424 !important;
+}
+
+#dark .sidebarOption--active {
+  background-color: #fcecec;
+  color: #c04b37;
+  font-weight: 800 !important;
+}
+#dark .sidebarOption:hover{
+  background-color: #fcecec;
+  color: #c04b37;
+  font-weight: 800 !important;
+  
 }
 
 .sidebarOption > h3 {
@@ -204,6 +316,7 @@ SIDE BAR OPTION
   overflow: scroll;
 }
 
+
 .emailList__settings{
 
   display: flex;
@@ -211,22 +324,34 @@ SIDE BAR OPTION
   position: sticky;
   top: 0;
   border-bottom: 1px solid whitesmoke;
+  
   background-color: white;
   z-index: 999;
   padding-right: 10px;
 
 }
+#dark .emailList__settings{
+  
+  background-color: #242424;
+  color: white;
+  
 
+}
 .email__list::-webkit-scrollbar{
 
   display: none;
 }
-
+#dark .email__list{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 .email__list{
+  
 
   -ms-overflow-style:none;
   scrollbar-width:none;
 }
+
+
 .emailList__list
 {
 
@@ -253,6 +378,9 @@ SIDE BAR OPTION
 
 
 }
+#dark .section{
+background-color: #404040;
+}
 
 .emailList__sections{
 
@@ -263,6 +391,10 @@ SIDE BAR OPTION
   background-color: white;
   z-index: 999;
 }
+#dark .emailList__sections{
+  color: whitesmoke;
+  background-color: #404040;
+}
 
 .section--selected{
 
@@ -270,10 +402,13 @@ SIDE BAR OPTION
   border-width: 3px !important;
 }
 
-.section:hover{
+#dark .selcted__inbox{
+color: #242424;
+}
 
-  background-color: whitesmoke;
-  border-width: 3px !important;
+.section:hover{
+border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  
 }
 
 .section > h4{
@@ -289,21 +424,29 @@ SIDE BAR OPTION
 
 
 .emailRow{
-
   display: flex;
   align-items: center;
   height: 50px;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid grey;
   cursor: pointer;
   z-index: 999;
   
+  
+}
+#dark .emailRow{
+  background-color: #3a3b3c;
+  color: whitesmoke;
+  transition: all 300ms ease;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .emailRow:hover{
 
   border-top: 1px solid whitesmoke;
-  box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.24);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+   transform: scale(101%);
 }
+  
 .emailRow__message{
 
   display: flex;
@@ -351,7 +494,19 @@ SIDE BAR OPTION
   flex: 1;
   background-color: whitesmoke;
 }
-
+#dark .mail__body{
+  background-color: #242424;
+}
+#dark .mail__tools{
+  background-color: #242424;
+}
+#light{
+  transition: all 400ms ease-in-out ;
+}
+#dark{
+  transition: all 400ms ease-in-out ;
+  background-color: #242424;
+}
 .mail__tools{
 
   display: flex;
@@ -372,7 +527,7 @@ SIDE BAR OPTION
   background-color: white;
   padding: 20px;
   height: 100vh;
-  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 
@@ -384,6 +539,9 @@ SIDE BAR OPTION
   padding: 20px;
   position: relative;
 }
+#dark .mail__bodyHeader{
+color: whitesmoke;
+}
 .mail__bodyHeader > h2{
 
   font-weight: 400;
@@ -394,7 +552,9 @@ SIDE BAR OPTION
 
   color: #e8ab02 !important;
 }
-
+#dark .mail__message{
+  color: whitesmoke;
+}
 .mail__message > p {
 
   padding: 10px;
@@ -414,7 +574,10 @@ SIDE BAR OPTION
   top: 24px;
   right: 0;
   font-size: 12px;
-  color: gray;
+  color: gray ;
+}
+#dark .mail__time{
+color: whitesmoke;
 }
 
 /*  
@@ -422,7 +585,6 @@ mail pop up
 */
 
 .sendMail{
-
   position: absolute;
   bottom: 0px;
   right: 50px;
@@ -524,7 +686,8 @@ mail pop up
 
 
   object-fit: contain;
-  height: 200px;
+  height: 150px;
+  margin-bottom: 50px;
 
 }
 

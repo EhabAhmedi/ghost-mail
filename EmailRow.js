@@ -1,11 +1,11 @@
 import { Checkbox, IconButton } from "@mui/material";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import LabelImportantOutlinedIcon from "@mui/icons-material/LabelImportantOutlined";
-import React from "react";
-import "./EmailRow.css";
+import React, { useContext } from "react";
 import { useDispatch } from "react-redux";
 import { selectMail } from "./features/counter/mailSlice";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "./App";
 
 
 function EmailRow({ id , title, subject , description , message , time }) {
@@ -23,9 +23,10 @@ function EmailRow({ id , title, subject , description , message , time }) {
 
     navigate('/mail')
   }
+  const { theme }= useContext(ThemeContext)
 
   return (
-    <div onClick={openMail} className='emailRow'>
+    <div onClick={openMail} className='emailRow' id={theme}>
 
        <div className="emailRow__options">
         

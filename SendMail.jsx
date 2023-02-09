@@ -1,5 +1,4 @@
-import React from "react";
-import "./sendMail.css";
+import React, { useContext } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
@@ -7,9 +6,12 @@ import { useDispatch } from "react-redux";
 import { closeSendMessage } from "./features/counter/mailSlice";
 import { db } from "./firebase";
 import firebase from 'firebase'
+import { ThemeContext } from "./App";
 
 
 function Sendmail() {
+  const { theme }= useContext(ThemeContext)
+
   const { register , handleSubmit , watch , formState : {errors}} = useForm();
   const dispatch = useDispatch();
   
@@ -30,7 +32,7 @@ function Sendmail() {
   }
 
   return (
-    <div className='sendMail'>
+    <div className='sendMail' id={theme}>
 
         <div className="sendMail__header">
             <h3>New Message</h3>

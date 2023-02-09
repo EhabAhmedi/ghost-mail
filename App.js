@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
@@ -11,13 +11,18 @@ import { login, selectUser } from "./features/counter/userSlice";
 import Login from "./Login";
 import { auth } from "./firebase";
 import Sendmail from "./SendMail";
+import Toggle from "./Toggle";
 
+export const ThemeContext=React.createContext(null)
 
 
 
 
 
 function App() {
+
+
+
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen)
   const user = useSelector(selectUser);
 
@@ -31,7 +36,7 @@ function App() {
         if (firebaseUser){
           
           console.log('any' , firebaseUser)
-          //logined idit
+         
           
           dispatch(login({
             
@@ -45,14 +50,23 @@ function App() {
       })
 
   },[auth])
+
+  const [theme, setTheme]=useState("light")
+  
+ 
+  
     return (
+      
       <Router>
+        <ThemeContext.Provider value={{theme,setTheme}}>
         {!user ?  <Login /> :
         
-          <div className="app">
-            <Header/>
+        
+          <div className="app"  >
+            
+            <Header /> 
   
-                  <div className='app__body'>
+                  <div className='app__body' >
                       <Sidebar />
                     <Routes>
   
@@ -68,7 +82,9 @@ function App() {
                 
   
             </div>
+           
          }
+          </ThemeContext.Provider>
       </Router>
     );
   }

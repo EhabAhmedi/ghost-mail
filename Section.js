@@ -1,8 +1,10 @@
-import React from 'react'
-import "./Section.css"
+import React, { useContext } from 'react'
+import { ThemeContext } from './App'
 function Section({Icon, title, color, selected}) {
+  const { theme }= useContext(ThemeContext)
+
   return (
-    <div className={`section ${selected && "section--selected"}`}
+    <div id={theme} className={`section ${selected && "section--selected"}`}
     style={{
       borderBottom: `3px solid ${color}`,
       color:`${selected && color}`
